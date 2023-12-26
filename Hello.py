@@ -68,13 +68,13 @@ else:
     MONTH_coef = 0
 if DXSUM1 != "" and MONTH != "":
     if DXSUM1 * MONTH == 12:
-        DXSUM1_MONTH = -1.35489 * 12
+        DXSUM1_MONTH = -1.35489
     elif DXSUM1 * MONTH == 24:
-        DXSUM1_MONTH = -0.55894 * 24
+        DXSUM1_MONTH = -0.55894
     elif DXSUM1 * MONTH == 48:
-        DXSUM1_MONTH = 0.63992 * 48
+        DXSUM1_MONTH = 0.63992
     elif DXSUM1 * MONTH == 72:
-        DXSUM1_MONTH = 0.69173 * 72
+        DXSUM1_MONTH = 0.69173
     else:
         DXSUM1_MONTH = 0
 if GDDROP == 1:
