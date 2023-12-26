@@ -140,9 +140,9 @@ else:
 if AGE != None and R3 != None and GENDER != None and PTHOME != None and DXSUM1 != None and MONTH != None and GDDROP != None and Q13SCORE != None and MMYEAR != None and MMDAY != None and MMHOSPIT != None and MMFLOOR != None and MMTREE != None and MMBALLDL != None and MMTREEDL != None and FAQFORM != None and FAQTRAVL != None and NPIG != None:
     st.subheader("结果输出🖨️")
     prob = INTERCEPT_coef + AGE_coef * AGE + R3_coef * R3 + GENDER_coef * GENDER + PTHOME_coef * PTHOME + DXSUM1_coef * DXSUM1 + MONTH_coef * MONTH + DXSUM1_MONTH + GDDROP_coef * GDDROP + Q13SCORE_coef * Q13SCORE + MMYEAR_coef * MMYEAR + MMDAY_coef * MMDAY + MMHOSPIT_coef * MMHOSPIT + MMFLOOR_coef * MMFLOOR + MMTREE_coef * MMTREE + MMBALLDL_coef * MMBALLDL + MMTREEDL_coef * MMTREEDL + FAQFORM_coef * FAQFORM + FAQTRAVL_coef * FAQTRAVL + NPIG_coef * NPIG
-    prob = np.exp(prob) / np.exp(prob + 1)
+    prob = np.exp(prob) / (np.exp(prob) + 1)
     if prob < 0 or prob > 1:
         st.write("无法预测认知程度的恶化概率")
     else:
         prob = prob * 100
-        st.write("认知程度恶化的概率为"+str(prob)[:5]+"%")
+        st.write("认知程度恶化的概率为" + str(prob)[:5] + "%")
